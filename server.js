@@ -1,6 +1,6 @@
 const express = require('express');
 const path = require('path');
-const { Pool } = require('pg');
+
 const bcrypt = require('bcrypt');
 const session = require('express-session');
 require('dotenv').config();
@@ -24,13 +24,8 @@ app.set('views', path.join(__dirname, 'views')); // This line is optional unless
 
 // Routes
 app.get('/', async (req, res) => {
-  try {
-    const result = await pool.query('SELECT NOW()');
-    res.render('homepage', { serverTime: result.rows[0].now });
-  } catch (err) {
-    console.error('Database error:', err);
-    res.status(500).send('Database connection error');
-  }
+  
+    res.render('homepage');
 });
 
 
