@@ -1,1 +1,1 @@
-# CapstoneDeluxe
+# Capstone
